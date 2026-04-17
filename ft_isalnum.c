@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 11:04:22 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/15 11:11:42 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:27:13 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (ft_isalpha(c)) || ft_isdigit(c);
 }
