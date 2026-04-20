@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 18:04:15 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 16:12:33 by joaqumar         ###   ########.fr       */
+/*   Created: 2026/04/19 12:32:24 by joaqumar          #+#    #+#             */
+/*   Updated: 2026/04/20 16:12:49 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftlib.h"
 
-int	ft_atoi(const char *str)
+void	*calloc(size_t count, size_t size)
 {
-	long	nbr;
-	int		sign;
+	void	*ptr;
+	size_t	total_s;
 
-	nbr = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign = -1;
-	while (ft_isdigit(*str))
-	{
-		nbr = (nbr * 10) + (*str++ - '0');
-	}
-	return (nbr * sign);
+	total_s = count * size;
+	if (count != 0 && total_s / count != size)
+		return (NULL);
+	ptr = malloc(total_s);
+	if (!ptr)
+		return (NULL);
+	memset(ptr, 0, total_s);
+	return (ptr);
 }

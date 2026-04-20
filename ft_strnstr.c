@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 18:04:15 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 16:12:33 by joaqumar         ###   ########.fr       */
+/*   Created: 2026/04/19 01:54:07 by joaqumar          #+#    #+#             */
+/*   Updated: 2026/04/20 16:11:50 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	long	nbr;
-	int		sign;
+	char	*h;
+	char	*n;
+	size_t	temp_len;
 
-	nbr = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign = -1;
-	while (ft_isdigit(*str))
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len > 0)
 	{
-		nbr = (nbr * 10) + (*str++ - '0');
+		h = (char *)haystack;
+		n = (char *)needle;
+		temp_len = len;
+		while (*h && *n && *h == *n && temp_len > 0)
+		{
+			h++;
+			n++;
+			temp_len--;
+		}
+		if (!*n)
+			return ((char *)haystack);
+		haystack++;
+		len--;
 	}
-	return (nbr * sign);
+	return (NULL);
 }

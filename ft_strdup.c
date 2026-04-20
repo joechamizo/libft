@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 18:04:15 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 16:12:33 by joaqumar         ###   ########.fr       */
+/*   Created: 2026/04/19 13:01:53 by joaqumar          #+#    #+#             */
+/*   Updated: 2026/04/19 13:23:56 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftlib.h"
 
-int	ft_atoi(const char *str)
+char	*strdup(const char *s1)
 {
-	long	nbr;
-	int		sign;
+	size_t	s_len;
+	char	*start;
+	char	*dest;
 
-	nbr = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign = -1;
-	while (ft_isdigit(*str))
-	{
-		nbr = (nbr * 10) + (*str++ - '0');
-	}
-	return (nbr * sign);
+	s_len = ft_strlen(s1);
+	dest = (char *)malloc(s_len + 1);
+	if (!dest)
+		return (NULL);
+	start = dest;
+	while (*s1)
+		*dest++ = *s1++;
+	*dest = '\0';
+	return (start);
 }
