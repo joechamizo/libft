@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 11:22:57 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/19 11:09:17 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:56:08 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char title[] = "'P' Tester for libft_42";
 int linew = 80;
 int width = 80;
 int temp = 1;
-int testnb = 150;
+int testnb = 550;
 
 int isok = 1;
 const char *linechar = "═";
@@ -83,7 +83,6 @@ void printresult(int isok, char *name)
 		printline(20 - namelen, ".");
 	printf(RESET " - Test result  ==> " RESET);
 	(isok) ? printf(GREEN " <OK>\n" RESET) : printf(RED " <KO>\n" RESET);
-	//printline(width, linechar);
 	msleep(5);
 }
 int pr_okko(int isok)
@@ -97,7 +96,7 @@ int pr_okko(int isok)
 
 char randchar(void)
 {
-	char res = rand() % 128;
+	char res = rand() % 256;
 	return (res);
 }
 
@@ -120,8 +119,9 @@ int test_func(int type_func, int (*ft_func)(int), int (*std_func)(int), char *na
 				printf(YELLOW " %c" RESET " ** ", crand);
 			else
 				printf("   ** ");
-			if (pr_okko(ft_func(crand) == std_func(crand)) == 0)
+			if (pr_okko(!!ft_func(crand) == !!std_func(crand)) == 0)
 				isok = 0;
+			//printf("func: %s - ft: %c / std: %c\n", name, ft_func(crand), std_func(crand));
 			borralin();
 			crand++;
 		}
@@ -175,7 +175,6 @@ void printend(int w)
 
 int	main(void)
 {
-	char	crand = randchar();
 	int		isok = 1;
 	actualizar_tamano();
 	printheader(linew);
@@ -185,20 +184,6 @@ int	main(void)
 	test_func(1, ft_isascii, isascii, "ft_isascii");
 	test_func(1, ft_isprint, isprint, "ft_isprint");
 	test_func(1, ft_isalpha, isalpha, "ft_strlen");
-	test_func(1, ft_isdigit, isdigit, "ft_memsett");
-	test_func(1, ft_isalnum, isalnum, "ft_bzero");
-	test_func(1, ft_isprint, isprint, "ft_memcpy");
-	test_func(1, ft_isascii, isascii, "ft_memmove");
-	test_func(1, ft_isalpha, isalpha, "ft_strlcpy");
-	test_func(1, ft_isdigit, isdigit, "ft_strlcat");
-	test_func(1, ft_isalnum, isalnum, "ft_toupper");
-	test_func(1, ft_isprint, isprint, "ft_tolower");
-	test_func(1, ft_isascii, isascii, "ft_strchr");
-	test_func(1, ft_isalpha, isalpha, "ft_strrchr");
-	test_func(1, ft_isdigit, isdigit, "ft_memchr");
-	test_func(1, ft_isalnum, isalnum, "ft_memcmp");
-	test_func(1, ft_isprint, isprint, "ft_strnstr");
-	test_func(1, ft_isascii, isascii, "ft_atoi");
 
 //	t_ft_strlen();
 	printend(linew);
