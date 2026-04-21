@@ -6,12 +6,11 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:45:22 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 12:41:12 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/21 18:21:31 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
