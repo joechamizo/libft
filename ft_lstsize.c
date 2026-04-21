@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 18:27:01 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 18:30:02 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/21 19:05:40 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	coutnter;
+	int	counter;
 
 	counter = 0;
 	while (lst)
 	{
-		lst->next;
-		cpounter++;
+		lst = lst->next;
+		counter++;
 	}
 	return (counter);
 }
