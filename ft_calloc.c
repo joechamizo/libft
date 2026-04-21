@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 12:32:24 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 16:12:49 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:12:11 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	*calloc(size_t count, size_t size)
 	ptr = malloc(total_s);
 	if (!ptr)
 		return (NULL);
-	memset(ptr, 0, total_s);
+	ft_memset(ptr, 0, total_s);
 	return (ptr);
 }

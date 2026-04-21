@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:00:50 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 11:13:48 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:03:26 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 		*nb_str = '0';
 	while (num > 0)
 	{
-		*nb_str-- = (num % 10) + '0';
+		*nb_str = (num % 10) + '0';
 		num /= 10;
 	}
 	if (n < 0)
