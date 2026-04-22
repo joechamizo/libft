@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:39:29 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 23:47:29 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:31:19 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	**ft_fill(char **tab, char const *s, char c)
 			start = s;
 			while (*s && *s != c)
 				s++;
-			tab[i++] = ft_substr(start, 0, size_t(s - start));
+			tab[i++] = ft_substr(start, 0, (size_t)(s - start));
 			if (!tab[i - 1])
 				return (ft_free_all(tab, i - 1));
 		}

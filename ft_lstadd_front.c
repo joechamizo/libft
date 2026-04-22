@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 18:18:47 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 19:03:49 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:31:52 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return (NULL);
+		return ;
 	new->next = *lst;
 	*lst = new;
 }
