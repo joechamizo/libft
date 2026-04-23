@@ -6,13 +6,13 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 13:01:53 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/19 13:23:56 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:12:22 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	s_len;
 	char	*start;

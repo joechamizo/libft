@@ -4,7 +4,7 @@ CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 RM          = rm -f
 AR          = ar rcs
-
+HEADER		= libft.h
 
 PART1_SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
               ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -29,14 +29,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-b: $(PART1_OBJS) $(PART2_OBJS)
-	$(AR) $(NAME) $(PART1_OBJS) $(PART2_OBJS)
-
-bonus: $(OBJS) $(PART3_OBJS)
-	$(AR) $(NAME) $(PART1_OBJS) $(PART2_OBJS) $(PART3_OBJS)
 
 clean:
 	$(RM) $(PART1_OBJS) $(PART2_OBJS) $(PART3_OBJS)

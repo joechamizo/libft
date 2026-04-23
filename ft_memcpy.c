@@ -6,13 +6,13 @@
 /*   By: joaqumar <joaqumar@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 13:18:56 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/16 08:15:05 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:10:39 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dest, const void *src, size_t count)
+void	*ft_memcpy(void *dest, const void *src, size_t count)
 {
 	unsigned char		*d;
 	unsigned char const	*s;
