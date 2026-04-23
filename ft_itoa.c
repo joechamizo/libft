@@ -6,46 +6,53 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:00:50 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/23 13:34:55 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:11:21 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	get_len(int n)
+static int	get_len(long n)
 {
-	if (n < 0)
-		return (1 + get_len(-n));
-	if (n < 10)
-		return (1);
-	return (1 + get_len(n / 10));
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	n_len;
-	char	*nb_str;
-	char	*nb_start;
 	long	num;
+	int		len;
+	char	*str;
 
 	num = n;
-	n_len = get_len(n);
-	nb_str = (char *)malloc(sizeof(char) * (n_len + 1));
-	if (!nb_str)
+	len = get_len(num);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	nb_start = nb_str;
-	nb_str += n_len;
-	*nb_str-- = '\0';
-	if (num < 0)
-		num = -num;
+	str[len] = '\0';
 	if (num == 0)
-		*nb_str = '0';
+		str[0] = '0';
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
 	while (num > 0)
 	{
-		*nb_str = (num % 10) + '0';
+		str[--len] = (num % 10) + '0';
 		num /= 10;
 	}
-	if (n < 0)
-		*nb_str = '-';
-	return (nb_start);
+	return (str);
 }

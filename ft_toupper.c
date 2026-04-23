@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 13:29:18 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/16 14:09:07 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:48:24 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c < 'z')
-		return (c & 32);
+	if (c >= 'a' && c <= 'z')
+		return (c ^ 32);
 	else
 		return (c);
 }

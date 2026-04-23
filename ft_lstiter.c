@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:41:17 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/22 16:37:12 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:17:07 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		f(lst);
+		f(lst->content);
 		lst = lst->next;
 	}
 }

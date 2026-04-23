@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:01:37 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/16 15:13:33 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:46:27 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c < 'Z')
-		return (c | 32);
+	if (c >= 'A' && c <= 'Z')
+		return (c ^ 32);
 	else
 		return (c);
 }
