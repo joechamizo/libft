@@ -11,20 +11,37 @@ Mi propia biblioteca de C: una colección de funciones esenciales de la `libc` r
 ### 🔹 Parte 1: Funciones de la Libc
 Recreación de las funciones estándar para el manejo de caracteres, memoria y cadenas.
 
-
 | Categoría | Funciones |
-| :--- | :--- |
-| **🔤 Caracteres** | `ft_isalpha` • `ft_isdigit` • `ft_isalnum` • `ft_isascii` • `ft_isprint` • `ft_toupper` • `ft_tolower` |
-| **🧠 Memoria** | `ft_memset` • `ft_bzero` • `ft_memcpy` • `ft_memmove` • `ft_memchr` • `ft_memcmp` • `ft_calloc` |
-| **🧵 Strings** | `ft_strlen` • `ft_strlcpy` • `ft_strlcat` • `ft_strchr` • `ft_strrchr` • `ft_strncmp` • `ft_strnstr` • `ft_strdup` |
-| **🔢 Conversión** | `ft_atoi` |
+*	🔤 **`ft_isalpha`**: Comprueba si el carácter es alfabético.
+*	🔢 **`ft_isdigit`**: Comprueba si el carácter es un dígito del 0 al 9.
+*	🔣 **`ft_isalnum`**: Comprueba si el carácter es alfanumérico.
+*	🌐 **`ft_isascii`**: Comprueba si el carácter pertenece al set ASCII.
+*	🖼️ **`ft_isprint`**: Comprueba si el carácter es imprimible (incluyendo el espacio).
+*	📏 **`ft_strlen`**: Calcula la longitud de una cadena de caracteres.
+*	🧼 **`ft_memset`**: Llena un bloque de memoria con un byte específico.
+*	🧹 **`ft_bzero`**: Escribe ceros en un bloque de memoria.
+*	📋 **`ft_memcpy`**: Copia un área de memoria (sin solapamiento).
+*	🔄 **`ft_memmove`**: Copia un área de memoria (segura ante solapamientos).
+*	📦 **`ft_strlcpy`**: Copia una cadena a un tamaño específico con cierre nulo.
+*	🪢 **`ft_strlcat`**: Concatena una cadena a otra con un tamaño límite.
+*	🔼 **`ft_toupper`**: Convierte un carácter a mayúscula.
+*	🔽 **`ft_tolower`**: Convierte un carácter a minúscula.
+*	🔍 **`ft_strchr`**: Busca la primera aparición de un carácter en una cadena.
+*	🔙 **`ft_strrchr`**: Busca la última aparición de un carácter en una cadena.
+*	⚖️  **`ft_strncmp`**: Compara dos cadenas hasta un número n de caracteres.
+*	📍 **`ft_memchr`**: Busca un byte específico dentro de un bloque de memoria.
+*	🔀 **`ft_memcmp`**: Compara dos bloques de memoria.
+*	🔦 **`ft_strnstr`**: Localiza una subcadena dentro de otra cadena.
+*	🆔 **`ft_atoi`**: Convierte una cadena de caracteres a un número entero.
+*	🏗️ **`ft_calloc`**: Reserva memoria dinámica y la inicializa a cero.
+*	👯 **`ft_strdup`**: Duplica una cadena reservando nueva memoria.
 
 ---
 
-### 🔸 Parte 2: Funciones Adicionales
+### 🔹 Parte 2: Funciones Adicionales
 Funciones útiles que no forman parte de la biblioteca estándar de C o están optimizadas para el uso en 42.
 
-*   ✂️ **`ft_substr`**: Crea una subcadena a partir de una cadena principal.
+*   ✂️  **`ft_substr`**: Crea una subcadena a partir de una cadena principal.
 *   🔗 **`ft_strjoin`**: Une dos cadenas en una nueva reserva de memoria.
 *   🧹 **`ft_strtrim`**: Elimina caracteres específicos al principio y al final de una cadena.
 *   🧩 **`ft_split`**: Divide una cadena en un array de strings usando un delimitador.
@@ -63,7 +80,6 @@ Funciones para manipular la estructura `t_list`, fundamental para la gestión di
 2. **Compilar la biblioteca:**
    ```bash
    make        # Genera libft.a con funciones básicas
-   make bonus  # Incluye las funciones de listas enlazadas
    ```
 
 3. **Limpieza:**
@@ -71,7 +87,7 @@ Funciones para manipular la estructura `t_list`, fundamental para la gestión di
    make clean  # Borra los archivos .o
    make fclean # Borra los .o y el archivo libft.a
    ```
-
 ---
-Creado por joaqumar (42) 🚀
+
+🚀 _Creado por joaqumar@student.42barcelonaa.com_ 🚀
 

@@ -6,13 +6,13 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:00:50 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 13:03:26 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 13:34:55 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	get_len(int n)
+static char	get_len(int n)
 {
 	if (n < 0)
 		return (1 + get_len(-n));

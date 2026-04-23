@@ -6,13 +6,13 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 12:32:24 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 16:12:11 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/23 13:27:43 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 	size_t	total_s;
