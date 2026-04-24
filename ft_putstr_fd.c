@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:02:03 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/21 15:51:16 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:32:19 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 	{
-		write(fd, s, 1);
+		ft_putchar_fd(*s, fd);
 		s++;
 	}
 }

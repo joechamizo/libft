@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:39:29 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/23 13:56:37 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:16:34 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,24 @@ static char	**ft_free_all(char **tab, size_t i)
 	return (NULL);
 }
 
+static char	*ft_wordndup(const char *s, size_t n)
+{
+	char	*word;
+	size_t	i;
+
+	word = malloc(n + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
 static char	**ft_fill(char **tab, char const *s, char c)
 {
 	size_t		i;
@@ -54,7 +72,7 @@ static char	**ft_fill(char **tab, char const *s, char c)
 			start = s;
 			while (*s && *s != c)
 				s++;
-			tab[i++] = ft_substr(start, 0, (size_t)(s - start));
+			tab[i++] = ft_wordndup(start, (size_t)(s - start));
 			if (!tab[i - 1])
 				return (ft_free_all(tab, i - 1));
 		}

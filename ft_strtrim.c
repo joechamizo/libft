@@ -6,7 +6,7 @@
 /*   By: joaqumar <joaqumar@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:45:23 by joaqumar          #+#    #+#             */
-/*   Updated: 2026/04/20 16:21:29 by joaqumar         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:15:27 by joaqumar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char const	*start;
 	char const	*end;
+	char		*str;
+	size_t		i;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -25,5 +27,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = s1 + ft_strlen(s1);
 	while (end > start && ft_strchr(set, *(end - 1)))
 		end--;
-	return (ft_substr(s1, (unsigned int)(start - s1), (size_t)(end - start)));
+	str = malloc(sizeof(char) * (end - start + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		str[i++] = *start++;
+	str[i] = '\0';
+	return (str);
 }

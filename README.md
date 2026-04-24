@@ -2,6 +2,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por joaqumar_
 
 # 📚 Libft - @42Barcelona
 
+## 📜 Descripcion
 Mi propia biblioteca de C: una colección de funciones esenciales de la `libc` recreadas desde cero, junto con utilidades adicionales para el manejo de memoria, strings y listas.
 
 ---
