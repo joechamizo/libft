@@ -1,9 +1,9 @@
-_Este proyecto ha sido creado como parte del currículo de 42 por joaqumar_
+*Este proyecto ha sido creado como parte del currículo de 42 por joaqumar*
 
 # 📚 Libft - @42Barcelona
 
-## 📜 Descripcion
-Mi propia biblioteca de C: una colección de funciones esenciales de la `libc` recreadas desde cero, junto con utilidades adicionales para el manejo de memoria, strings y listas.
+## 📜 Descripción
+Este proyecto consiste en la creación de mi propia biblioteca de C. El objetivo es recrear funciones esenciales de la `libc` estándar, así como implementar utilidades adicionales para el manejo de memoria, cadenas de caracteres y listas enlazadas. Esta librería servirá como base fundamental para todos los proyectos futuros dentro del currículo de 42.
 
 ---
 
@@ -12,83 +12,95 @@ Mi propia biblioteca de C: una colección de funciones esenciales de la `libc` r
 ### 🔹 Parte 1: Funciones de la Libc
 Recreación de las funciones estándar para el manejo de caracteres, memoria y cadenas.
 
-| Categoría | Funciones |
-*	🔤 **`ft_isalpha`**: Comprueba si el carácter es alfabético.
-*	🔢 **`ft_isdigit`**: Comprueba si el carácter es un dígito del 0 al 9.
-*	🔣 **`ft_isalnum`**: Comprueba si el carácter es alfanumérico.
-*	🌐 **`ft_isascii`**: Comprueba si el carácter pertenece al set ASCII.
-*	🖼️ **`ft_isprint`**: Comprueba si el carácter es imprimible (incluyendo el espacio).
-*	📏 **`ft_strlen`**: Calcula la longitud de una cadena de caracteres.
-*	🧼 **`ft_memset`**: Llena un bloque de memoria con un byte específico.
-*	🧹 **`ft_bzero`**: Escribe ceros en un bloque de memoria.
-*	📋 **`ft_memcpy`**: Copia un área de memoria (sin solapamiento).
-*	🔄 **`ft_memmove`**: Copia un área de memoria (segura ante solapamientos).
-*	📦 **`ft_strlcpy`**: Copia una cadena a un tamaño específico con cierre nulo.
-*	🪢 **`ft_strlcat`**: Concatena una cadena a otra con un tamaño límite.
-*	🔼 **`ft_toupper`**: Convierte un carácter a mayúscula.
-*	🔽 **`ft_tolower`**: Convierte un carácter a minúscula.
-*	🔍 **`ft_strchr`**: Busca la primera aparición de un carácter en una cadena.
-*	🔙 **`ft_strrchr`**: Busca la última aparición de un carácter en una cadena.
-*	⚖️  **`ft_strncmp`**: Compara dos cadenas hasta un número n de caracteres.
-*	📍 **`ft_memchr`**: Busca un byte específico dentro de un bloque de memoria.
-*	🔀 **`ft_memcmp`**: Compara dos bloques de memoria.
-*	🔦 **`ft_strnstr`**: Localiza una subcadena dentro de otra cadena.
-*	🆔 **`ft_atoi`**: Convierte una cadena de caracteres a un número entero.
-*	🏗️ **`ft_calloc`**: Reserva memoria dinámica y la inicializa a cero.
-*	👯 **`ft_strdup`**: Duplica una cadena reservando nueva memoria.
-
----
+* 🔤 **`ft_isalpha`**: Comprueba si el carácter es alfabético.
+* 🔢 **`ft_isdigit`**: Comprueba si el carácter es un dígito del 0 al 9.
+* 🔣 **`ft_isalnum`**: Comprueba si el carácter es alfanumérico.
+* 🌐 **`ft_isascii`**: Comprueba si el carácter pertenece al set ASCII.
+* 🖼️ **`ft_isprint`**: Comprueba si el carácter es imprimible.
+* 📏 **`ft_strlen`**: Calcula la longitud de una cadena.
+* 🧼 **`ft_memset`**: Llena la memoria con un byte constante.
+* 🧹 **`ft_bzero`**: Escribe ceros en un bloque de memoria.
+* 📋 **`ft_memcpy`**: Copia memoria (sin solapamiento).
+* 🔄 **`ft_memmove`**: Copia memoria (segura ante solapamientos).
+* 📦 **`ft_strlcpy`**: Copia cadenas con límite de tamaño.
+* 🪢 **`ft_strlcat`**: Concatena cadenas con límite de tamaño.
+* 🔼 **`ft_toupper`**: Convierte a mayúscula.
+* 🔽 **`ft_tolower`**: Convierte a minúscula.
+* 🔍 **`ft_strchr`**: Busca un carácter en una cadena (desde el inicio).
+* 🔙 **`ft_strrchr`**: Busca un carácter en una cadena (desde el final).
+* ⚖️ **`ft_strncmp`**: Compara dos cadenas hasta 'n' caracteres.
+* 📍 **`ft_memchr`**: Busca un byte en un bloque de memoria.
+* 🔀 **`ft_memcmp`**: Compara dos bloques de memoria.
+* 🔦 **`ft_strnstr`**: Localiza una subcadena en otra.
+* 🆔 **`ft_atoi`**: Convierte una cadena a entero.
+* 🏗️ **`ft_calloc`**: Reserva memoria e inicializa a cero.
+* 💾 **`ft_strdup`**: Duplica una cadena existente.
 
 ### 🔹 Parte 2: Funciones Adicionales
-Funciones útiles que no forman parte de la biblioteca estándar de C o están optimizadas para el uso en 42.
+* ✂️ **`ft_substr`**: Extrae una subcadena.
+* ➕ **`ft_strjoin`**: Une dos cadenas en una nueva.
+* ✂️ **`ft_strtrim`**: Elimina caracteres específicos al inicio y final.
+* 🔪 **`ft_split`**: Divide una cadena por un delimitador.
+* 🔢 **`ft_itoa`**: Convierte entero a cadena.
+* 🗺️ **`ft_strmapi`**: Aplica una función a cada carácter (nueva cadena).
+* 📍 **`ft_striteri`**: Aplica una función a cada carácter (modificación).
+* 📤 **`ft_putchar_fd`**: Escribe un carácter en un fd.
+* 📜 **`ft_putstr_fd`**: Escribe una cadena en un fd.
+* 🔚 **`ft_putendl_fd`**: Escribe una cadena + newline en un fd.
+* 🔢 **`ft_putnbr_fd`**: Escribe un número en un fd.
 
-*   ✂️  **`ft_substr`**: Crea una subcadena a partir de una cadena principal.
-*   🔗 **`ft_strjoin`**: Une dos cadenas en una nueva reserva de memoria.
-*   🧹 **`ft_strtrim`**: Elimina caracteres específicos al principio y al final de una cadena.
-*   🧩 **`ft_split`**: Divide una cadena en un array de strings usando un delimitador.
-*   🔢 **`ft_itoa`**: Convierte un número entero en una cadena de caracteres.
-*   ⚙️ **`ft_strmapi`**: Aplica una función a cada carácter (creando una nueva cadena).
-*   🛠️ **`ft_striteri`**: Aplica una función a cada carácter (modificando la original).
-*   🖥️ **`ft_putchar_fd`**: Escribe un carácter en un descriptor de archivo dado.
-*   📜 **`ft_putstr_fd`**: Escribe una cadena en un descriptor de archivo dado.
-*   🔚 **`ft_putendl_fd`**: Escribe una cadena con salto de línea en un FD.
-*   🔢 **`ft_putnbr_fd`**: Escribe un número entero en un descriptor de archivo dado.
-
----
-
-### 🏗️ Parte 3: Listas Enlazadas
-Funciones para manipular la estructura `t_list`, fundamental para la gestión dinámica de datos.
-
-*   🆕 **`ft_lstnew`**: Crea un nuevo elemento de lista.
-*   🔝 **`ft_lstadd_front`**: Añade un elemento al principio de la lista.
-*   📏 **`ft_lstsize`**: Cuenta el número de elementos de la lista.
-*   🏁 **`ft_lstlast`**: Devuelve el último elemento de la lista.
-*   🔙 **`ft_lstadd_back`**: Añade un elemento al final de la lista.
-*   🗑️ **`ft_lstdelone`**: Elimina un elemento de la lista y libera su memoria.
-*   🧹 **`ft_lstclear`**: Elimina y libera toda la lista.
-*   🔄 **`ft_lstiter`**: Itera la lista y aplica una función a cada contenido.
-*   🗺️ **`ft_lstmap`**: Crea una nueva lista tras aplicar una función a cada nodo.
+### 🌟 Bonus: Listas Enlazadas
+* 🆕 **`ft_lstnew`** | 🔝 **`ft_lstadd_front`** | 📏 **`ft_lstsize`**
+* 🔚 **`ft_lstlast`** | 🔜 **`ft_lstadd_back`** | 🗑️ **`ft_lstdelone`**
+* 🧹 **`ft_lstclear`** | 🔄 **`ft_lstiter`** | 🗺️ **`ft_lstmap`**
 
 ---
 
-## 🚀 Uso y Compilación
+## 📋 Descripción Detallada de la Librería
+La `libft` se organiza en tres pilares:
+1. **Gestión de Memoria**: Manipulación de bloques `void *` y reserva dinámica segura con `malloc`.
+2. **Procesamiento de Strings**: Tratamiento avanzado de texto y conversiones (ASCII-Entero).
+3. **Estructuras de Datos**: Implementación de listas simplemente enlazadas para colecciones dinámicas.
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com
-   ```
-
-2. **Compilar la biblioteca:**
-   ```bash
-   make        # Genera libft.a con funciones básicas
-   ```
-
-3. **Limpieza:**
-   ```bash
-   make clean  # Borra los archivos .o
-   make fclean # Borra los .o y el archivo libft.a
-   ```
 ---
 
-🚀 _Creado por joaqumar@student.42barcelonaa.com_ 🚀
+## ⚙️ Instrucciones
+
+### Compilación
+El proyecto incluye un **Makefile** con las reglas estándar de 42:
+```bash
+make        # Compila la librería libft.a
+make bonus  # Incluye las funciones de listas enlazadas
+make clean  # Elimina archivos objeto (.o)
+make fclean # Elimina objetos y la librería (.a)
+make re     # Recompila todo desde cero
+```
+
+### Ejecución de Prueba
+Para probar la librería, crea un archivo `main.c` e inclúyela:
+```c
+#include "libft.h"
+#include <stdio.h>
+
+int main(void) {
+    char *str = "42 Barcelona";
+    printf("Longitud: %zu\n", ft_strlen(str));
+    return (0);
+}
+```
+Luego compila con: `cc main.c libft.a && ./a.out`
+
+---
+
+## 📚 Recursos
+
+### Referencias
+* [Man de Linux](https://man7.org): Documentación oficial de la `libc`.
+* [Norminette](https://github.com/42school/norminette): Reglas de estilo de 42.
+
+### Uso de Inteligencia Artificial
+En este proyecto se ha utilizado IA para:
+* **Clarificación de conceptos**: Entender el solapamiento de memoria para `ft_memmove`.
+* **Generación de Casos de Prueba**: Identificación de valores límite en `ft_atoi` e `ft_split`.
+* **Formateo**: Estructuración técnica de este archivo `README.md`.
 
