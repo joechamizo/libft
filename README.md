@@ -100,6 +100,6 @@ Luego compila con: `cc main.c libft.a && ./a.out`
 ### Uso de Inteligencia Artificial
 En este proyecto se ha utilizado IA para:
 * **Clarificación de conceptos**: Entender el solapamiento de memoria para `ft_memmove`.
-* **Generación de Casos de Prueba**: Identificación de valores límite en `ft_atoi` e `ft_split`.
+* **Generación de Casos de Prueba**: Identificación de valores límite en `ft_atoi` y `ft_split`.
 * **Formateo**: Estructuración técnica de este archivo `README.md`.
 
