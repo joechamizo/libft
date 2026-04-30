@@ -49,7 +49,7 @@ Recreación de las funciones estándar para el manejo de caracteres, memoria y c
 * 🔚 **`ft_putendl_fd`**: Escribe una cadena + newline en un fd.
 * 🔢 **`ft_putnbr_fd`**: Escribe un número en un fd.
 
-### 🌟 Bonus: Listas Enlazadas
+### 🌟 Parte 3: Listas Enlazadas
 * 🆕 **`ft_lstnew`** | 🔝 **`ft_lstadd_front`** | 📏 **`ft_lstsize`**
 * 🔚 **`ft_lstlast`** | 🔜 **`ft_lstadd_back`** | 🗑️ **`ft_lstdelone`**
 * 🧹 **`ft_lstclear`** | 🔄 **`ft_lstiter`** | 🗺️ **`ft_lstmap`**
@@ -70,7 +70,6 @@ La `libft` se organiza en tres pilares:
 El proyecto incluye un **Makefile** con las reglas estándar de 42:
 ```bash
 make        # Compila la librería libft.a
-make bonus  # Incluye las funciones de listas enlazadas
 make clean  # Elimina archivos objeto (.o)
 make fclean # Elimina objetos y la librería (.a)
 make re     # Recompila todo desde cero
