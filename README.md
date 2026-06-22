@@ -2,109 +2,109 @@
 
 # libft
 
-## 👤 Descripción General del Proyecto y Colaboración con IA
+## 👤 Project Overview and AI Collaboration
 
-Para mantener el proyecto comprensible, legible y alineado con el riguroso proceso de evaluación de 42, el desarrollo de esta librería estándar personalizada se estructuró en torno a la robustez algorítmica, la seguridad estricta de punteros y una gestión óptima de la memoria en el heap.
+To keep the project understandable, readable, and aligned with the rigorous 42 evaluation process, the development of this custom standard library was structured around algorithmic robustness, strict pointer safety, and optimized heap memory management.
 
-- **Arquitectura de funciones base:** Diseñado e implementado un conjunto de funciones esenciales de manipulación de memoria y strings, asegurando un comportamiento idéntico al de las funciones originales de la `libc`.
-- **Manejo avanzado de estructuras:** Desarrollo de un módulo independiente para la gestión y manipulación de listas enlazadas dinámicas, garantizando la ausencia de fugas de memoria durante operaciones complejas.
-- **Optimización y modularidad:** Organización de las funciones en archivos independientes para garantizar la compilación limpia de la librería estática mediante un Makefile automatizado.
-
----
-
-## 📝 Descripción
-
-El proyecto **libft** consiste en recrear un conjunto de funciones de la librería estándar de C (`libc`), así como otras utilidades adicionales que servirán como caja de herramientas base para todos los proyectos futuros dentro del currículo de 42.
-
-El objetivo principal es comprender a fondo el funcionamiento interno del comportamiento del sistema, la aritmética de punteros, la asignación dinámica de memoria y la manipulación precisa de tipos de datos sin depender de código externo.
+- **Core function architecture:** Designed and implemented a vital set of memory and string manipulation utilities, ensuring behavior identical to the original functions of the `libc`.
+- **Advanced structure handling:** Developed an independent module for managing dynamic singly linked lists, guaranteeing the complete absence of memory leaks during complex node operations.
+- **Optimization and modularity:** Organized functions into individual source files to ensure a clean compilation of the static library using an automated Makefile system.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📝 Description
 
-El código está meticulosamente organizado en tres secciones lógicas y funcionales bien diferenciadas:
+The **libft** project consists of recreating an extensive set of functions from the standard C library (`libc`), as well as other complementary utilities that will serve as the core toolkit for all future projects within the 42 curriculum.
 
-### 1. Funciones de la Libc (Recreación estándar)
-Funciones base destinadas a la manipulación de caracteres, strings y bloques de memoria cruda:
-- Gestión de tipos: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
-- Gestión de strings: `ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strlcpy`, `ft_strlcat`, `ft_atoi`.
-- Gestión de memoria: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`, `ft_strdup`.
+The primary objective is to deeply understand system behavior, pointer arithmetic, dynamic memory allocation, and precise data type manipulation without relying on external third-party dependencies.
 
-### 2. Funciones Adicionales (Utilidades avanzadas)
-Funciones complementarias no presentes en la `libc` original, centradas en la generación y formateo de datos:
-- `ft_substr`: Extracción segura de fragmentos de strings.
-- `ft_strjoin`: Concatenación dinámica de strings con reserva exacta de memoria.
-- `ft_strtrim`: Eliminación selectiva de caracteres al inicio y final de una string.
-- `ft_split`: Fragmentación de strings en arrays bidimensionales utilizando caracteres delimitadores.
-- `ft_itoa`: Conversión de valores enteros a cadenas numéricas ascii.
-- `ft_strmapi` y `ft_striteri`: Aplicación de funciones iterativas a cada carácter de una string.
-- Impresión en FD: `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`.
+---
 
-### 3. Funciones de Bonus (Listas Enlazadas)
-Módulo dedicado a la gestión y abstracción de datos dinámicos mediante una estructura de nodos (`t_list`):
+## 📂 Project Structure
+
+The source code is meticulously organized into three distinct logical and functional sections:
+
+### 1. Libc Functions (Standard Recreation)
+Core functions aimed at character verification, string transformations, and raw memory block inspections:
+- **Type management:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
+- **String management:** `ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strlcpy`, `ft_strlcat`, `ft_atoi`.
+- **Memory management:** `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`, `ft_strdup`.
+
+### 2. Additional Functions (Advanced Utilities)
+Complementary functions not present in the original `libc`, heavily focused on safe string creation, trimming, and formatting:
+- `ft_substr`: Secure extraction of specific string segments.
+- `ft_strjoin`: Dynamic string concatenation with exact heap memory reservations.
+- `ft_strtrim`: Selective trimming of specified prefix and suffix character sets from strings.
+- `ft_split`: Tokenization of strings into separate two-dimensional arrays using specified delimiters.
+- `ft_itoa`: Transformation of integer values into ascii numerical string formats.
+- `ft_strmapi` & `ft_striteri`: Iterative function mapping over individual character addresses in strings.
+- **File descriptor writing:** `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`.
+
+### 3. Bonus Functions (Linked Lists)
+A dedicated abstraction module designed to handle dynamic data containers via a custom node framework (`t_list`):
 - `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`.
 
 ---
 
-## 📐 Decisiones Técnicas y Algorítmicas
+## 📐 Technical Decisions and Algorithms
 
-La librería se construyó bajo un enfoque defensivo, priorizando la estabilidad del sistema frente a valores nulos o entradas fuera de rango.
+The library was engineered following defensive programming principles, prioritizing data stream stability over null parameters or out-of-bounds arguments.
 
-### 💾 Gestión de Memoria y Punteros Genéricos (`void *`)
-Para las funciones de copia e inspección de memoria (`ft_memcpy`, `ft_memmove`, etc.), se utiliza aritmética de punteros mediante transformaciones a `unsigned char *`.
-- **Justificación:** Los punteros genéricos `void *` no tienen un tamaño definido, por lo que no permiten la aritmética directa. Al castearlos a `unsigned char *`, se asegura que las evaluaciones y transferencias de datos se realicen byte a byte de forma exacta en cualquier arquitectura de hardware.
+### 💾 Memory Management and Generic Pointers (`void *`)
+For raw byte operations and memory comparisons (`ft_memcpy`, `ft_memmove`, etc.), internal tracking is achieved by casting variables into `unsigned char *`.
+- **Justification:** Generic pointers (`void *`) lack a defined data size, preventing direct address arithmetic. Casting them specifically to `unsigned char *` guarantees exact byte-by-byte inspection and manipulation paths regardless of hardware architecture.
 
-### ⚡ Algoritmo Seguros de Strings y Protección de Solapamientos
-En la función `ft_memmove`, el código detecta de forma predictiva si la dirección de memoria de origen (src) y la de destino (dest) se solapan.
-- **Justificación:** A diferencia de `ft_memcpy` (que asume que las zonas de memoria están separadas), `ft_memmove` garantiza la integridad de los datos realizando la copia de adelante hacia atrás si `dest < src`, o de atrás hacia adelante si `dest > src`, evitando la corrupción de bytes intermedios.
+### ⚡ Safe String Copying and Overlap Protection
+Inside the `ft_memmove` execution path, the algorithm dynamically checks whether the memory addresses of the source (`src`) and destination (`dest`) parameters overlap.
+- **Justification:** Unlike `ft_memcpy` (which assumes completely separate memory areas), `ft_memmove` prevents data corruption by adjusting copy direction: it processes bytes forward if `dest < src`, and backward if `dest > src`, safely preserving intermediate values.
 
-### 🎯 Robustez en la Asignación de Memoria
-Todas las funciones que reservan espacio en el heap (`ft_calloc`, `ft_strdup`, `ft_split`, etc.) cuentan con protecciones inmediatas post-asignación.
-- **Justificación:** Si un `malloc` falla debido a la falta de memoria del sistema, el puntero devuelto es `NULL`. Acceder a este puntero provocaría un Segmentation Fault. El código valida sistemáticamente cada asignación, abortando la función de manera limpia y segura si el sistema operativo se queda sin recursos.
-
----
-
-## 🧠 Guía de Defensa y Casos Borde (Edge Cases)
-
-Para superar las pruebas más exhaustivas (como las suites Francinette o libft-testers), se implementaron blindajes contra escenarios extremos:
-
-- **Aritmética Intercalada en `ft_atoi`:** Soporta cadenas con múltiples espacios en blanco iniciales de cualquier tipo (`\t`, `\n`, `\v`, `\f`, `\r`, ` `), seguidos por un único signo opcional (`+` o `-`), abstrayendo el valor entero de forma robusta.
-- **Limpieza en Cascada en `ft_split`:** Si la reserva de memoria falla para el nodo número 15 de un array bidimensional, el algoritmo no se limita a abortar; ejecuta un bucle invertido automático para liberar los 14 nodos reservados previamente antes de liberar el contenedor principal, garantizando cero fugas de memoria (`leaks`).
-- **El caso `INT_MIN` en `ft_itoa`:** El valor `-2147483648` no puede convertirse simplemente multiplicando por `-1` debido al desbordamiento positivo de los enteros estándar (`INT_MAX` es `2147483647`). Se gestiona de forma aislada o mediante tipos de datos extendidos para evitar fallos de desbordamiento de enteros.
+### 🎯 Heap Allocation Robustness
+Every utility function responsible for reserving memory space on the heap (`ft_calloc`, `ft_strdup`, `ft_split`, etc.) contains immediate post-allocation safeguards.
+- **Justification:** If a `malloc` call fails due to system exhaustion, it yields a `NULL` pointer. Dereferencing this pointer triggers a fatal Segmentation Fault. The code systematically validates each allocation, cleanly aborting execution paths if the operating system runs out of resources.
 
 ---
 
-## 🛠️ Uso y Compilación
+## 🧠 Defense Guide and Edge Cases
 
-### Requisitos
-- `cc`, `clang` o `gcc`
-- Herramienta de automatización `make`
-- Entorno basado en Unix (Linux, macOS)
+To smoothly pass rigorous automated validation scripts (such as Francinette or libft-testers), native defenses were implemented against edge cases:
 
-### Compilación de la Librería
+- **Interleaved Spacing in `ft_atoi`:** Correctly strips any leading whitespace characters (`\t`, `\n`, `\v`, `\f`, `\r`, ` `), parses a single optional mathematical sign character (`+` or `-`), and extracts numerical segments smoothly.
+- **Cascading Garbage Collection in `ft_split`:** If memory allocation fails midway (e.g., at the 15th word of a massive string array), the program does not simply leak memory. It triggers an automated reverse loop that cleanly frees all 14 previously assigned string tokens before releasing the main double-pointer anchor container, ensuring zero lingering `leaks`.
+- **The `INT_MIN` Boundary Case in `ft_itoa`:** The value `-2147483648` cannot be transformed by simply multiplying by `-1` because its positive absolute value exceeds standard signed boundaries (`INT_MAX` is `2147483647`). This case is handled in isolation or using expanded registers to safeguard against integer overflow vulnerabilities.
 
-Para generar el archivo de librería estática (`libft.a`), ejecuta el comando en la raíz del proyecto:
+---
+
+## 🛠️ Usage and Compilation
+
+### Requirements
+- `cc`, `clang`, or `gcc` compiler
+- `make` utility
+- Unix-based environment (Linux, macOS)
+
+### Compilation
+
+To generate the standard static library binary file (`libft.a`), run the following command at the root directory:
 ```bash
 make
 ```
 
-Para compilar la librería incluyendo las utilidades de listas enlazadas (Módulo Bonus):
+To compile the library expanding its structures to include the linked list handling tools (Bonus Module):
 ```bash
 make bonus
 ```
 
-El Makefile incluye las reglas de mantenimiento obligatorias: `all`, `clean`, `fclean` y `re`.
+The Makefile features the standard workspace maintenance paths required by the evaluation sheet: `all`, `clean`, `fclean`, and `re`.
 
-### Vinculación e Integración
+### Linking and Project Integration
 
-Para utilizar tu `libft` en cualquier proyecto subsiguiente, incluye su archivo de cabecera en tus fuentes y enlaza el binario estático resultante:
+To reference `libft` inside any of your subsequent software modules, include its header mapping in your files and link the target `.a` binary payload:
 
 ```c
 #include "libft.h"
 
 int main(void)
 {
-    char *str = ft_strdup("Evaluación exitosa en 42");
+    char *str = ft_strdup("Successful evaluation at 42");
     ft_putendl_fd(str, 1);
     free(str);
     return (0);
@@ -112,23 +112,29 @@ int main(void)
 ```
 
 ```bash
-gcc main.c libft.a -o ejecutable_prueba
-./ejecutable_prueba
+gcc main.c libft.a -o testing_program
+./testing_program
 ```
 
 ---
 
-## 📚 Recursos y Referencias
+## 📚 Resources and References
 
-### Referencias Bibliográficas
-- Manual de Linux (Sección 3): Referencias de comportamiento de la librería estándar `libc`.
-- Directrices oficiales de la Norminette de 42.
-- Estándar POSIX para la gestión y asignación de estructuras dinámicas de datos.
+### References
+- Linux Programmer's Manual (Section 3): Behavioral rules for standard `libc` features.
+- Official 42 Norminette guideline books.
+- POSIX standards for system memory configurations and dynamic structure handling.
 
-### Declaración de Uso de IA
-La asistencia de inteligencia artificial generativa se utilizó estrictamente como una herramienta de soporte y optimización estructural durante el flujo de trabajo:
-- **Diseño Arquitectónico:** Conceptualización de la lógica del Makefile automatizado y optimización de las dependencias de los archivos objeto.
-- **Optimización de Memoria:** Revisión de las rutinas de liberación inversa de memoria dentro del algoritmo `ft_split` para evitar fugas latentes.
-- **Documentación:** Generación, traducción y formateo estructural de este archivo README.md.
+### AI Usage Statement
+Generative artificial intelligence tools were strictly used as architectural structure and formatting support aids during the workflow for:
+- **Architectural Layouts:** Conceptualizing automated Makefile hierarchies and streamlining object dependency tracking.
+- **Memory Safety Enhancements:** Auditing the deep cleanup recursive structures inside the `ft_split` utility array to prevent edge-case memory leaks.
+- **Documentation Layouts:** Drafting, translating, and styling this unified README.md structural file.
 
-Toda la implementación fue auditada, adaptada, compilada y aprobada manualmente mediante la suite de herramientas oficiales, garantizando el cumplimiento total de la Norminette de 42 y la ausencia absoluta de fugas de memoria.
+The entire source implementation was manually validated, compiled, refactored, and audited against leak check tools, guaranteeing 100% compliance with the 42 Norminette and total memory leak immunity.
+
+---
+
+## ⚠️ Disclaimer of Liability
+
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. USE AT YOUR OWN RISK.**

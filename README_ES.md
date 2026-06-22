@@ -1,4 +1,4 @@
-_Este proyecto ha sido creado como parte del currículo de 42 por joaqumar_
+Este proyecto ha sido creado como parte del currículo de 42 por joaqumar_
 
 # libft
 
